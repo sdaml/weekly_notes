@@ -52,3 +52,9 @@ sudo pip install --upgrade six https://storage.googleapis.com/tensorflow/mac/ten
 A library for neural networks. You can do neural networks in Tensorflow as well but Keras abstracts a bit more from you and provides a bunch of common layer strategies, and other stuff that makes neural networks easier. Keras actually runs on top of TensorFlow.
 
 Ubuntu/Mac: `sudo pip install keras`
+
+### [OpenCV](http://opencv.org/)
+(Install can be pretty weird, this might be one to hold off on until we actually need it)
+A library for computer vision (ML/AI on images), really useful if we ever do anything with images.
+
+Install from [site ](http://opencv.org/)

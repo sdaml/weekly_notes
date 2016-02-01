@@ -46,7 +46,8 @@ Ubuntu:
 Mac:
 
 ```
-sudo pip install --upgrade six https://storage.googleapis.com/tensorflow/mac/tensorflow-0.5.0-py2-none-any.whl```
+sudo pip install --upgrade six https://storage.googleapis.com/tensorflow/mac/tensorflow-0.5.0-py2-none-any.whl
+```
 
 ### [Kera](http://keras.io)
 A library for neural networks. You can do neural networks in Tensorflow as well but Keras abstracts a bit more from you and provides a bunch of common layer strategies, and other stuff that makes neural networks easier. Keras actually runs on top of TensorFlow.

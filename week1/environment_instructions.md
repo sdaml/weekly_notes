@@ -28,7 +28,7 @@ We are using the following:
 - SciPy: for scientific computing (mostly just installing because some of our packages require it)
 
 On Ubuntu:
-```sudo apt-get install python-numpy python-matplotlib ipython ipython-notebook scipy python-pandas python-nose```
+```sudo apt-get install python-numpy python-matplotlib ipython ipython-notebook python-scipy python-pandas python-nose```
 
 ### [SciKit Learn](http://scikit-learn.org/stable/)
 

@@ -59,3 +59,11 @@ Ubuntu/Mac: `sudo pip install keras`
 A library for computer vision (ML/AI on images), really useful if we ever do anything with images.
 
 Install from [site ](http://opencv.org/)
+
+
+### Making Sure it works
+From a terminal, get into an ipython shell (type `ipython` hit enter), then from within the ipython shell try the following:
+```
+import numpy as np, pandas as pd, tensorflow as tf, sklearn, keras
+```
+If you don't get any errors, everything was installed correctly.

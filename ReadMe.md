@@ -1,1 +1,1 @@
-The repo for resources for weekly talks.
+The repo of resources for weekly talks.

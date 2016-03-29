@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Housing Prediction</title>
+    </head>
+    <body>
+        <h1>
+            Predicting housing prices in Seatle
+        </h1>
+        <h4>This model should be {{ metadata['score']*100 }}% accurate</h4>
+        
+        <form>
+        {% for label in metadata['labels'] %}
+        <p>{{ label }}:</p> <input id="{{label}}"></input>
+        {% endfor %}
+        <button id="submit">Submit</button>
+        </form>
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+        <script src="static/index.js"></script>
+    </body>
+</html>

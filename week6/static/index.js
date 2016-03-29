@@ -8,13 +8,16 @@ $.get('/metadata', function(data) {
 });
 
 document.getElementById('submit').onclick = function() {
-    var userData = {};
+    var userData = [];
     for (var i in labels) {
         var inputVal = document.getElementById(labels[i]).value;
-        userData[labels[i]] = inputVal;
+        userData.push(inputVal);
     }
     console.log(userData);
-
+    $.get('/predict', {'values': userData}, function(data) {
+       console.log(data);
+       document.getElementById('result').innerHTML = "<p>" + data + "</p>";
+    });
     return false;
 };
 

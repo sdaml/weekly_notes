@@ -26,8 +26,14 @@ def get_labels():
 def predict_house():
     required_labels = metadata['labels']
     score = metadata['score']
-    print request.args
-    return 200
+    vector = request.args.getlist('values[]')
+    vector = [int(x) for x in vector]
+    prediction = model.predict(vector)
+    
+    if prediction < 50000:
+        return "These values clearly aren't correct, this house is worth %.2f" % prediction
+    else:
+        return "This house is should be worth around $%.2f" % prediction
     
    
 if __name__ == "__main__":

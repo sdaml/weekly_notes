@@ -4,6 +4,7 @@ import numpy as np
 import sys
 from itertools import combinations
 import pickle
+import json
 
 
 def get_train_test_sets(data, feature_labels):
@@ -68,7 +69,7 @@ def brute_force_model(data_set, target):
 
     best_model = linear_model.LinearRegression(best_train_set,
                                                best_test_set)
-    return best_model, best_score
+    return best_model, best_score, best_train_set
 
 
 def simple_model(data_set, target):
@@ -89,7 +90,7 @@ def simple_model(data_set, target):
     model.fit(train_features, train_target)
     score = model.score(test_features, test_target)
     
-    return model, score
+    return model, score, feature_labels
 
 
 def main():
@@ -101,15 +102,18 @@ def main():
     houses = houses.drop(['date', 'id'], 1)
 
     if BRUTE_FORCE:
-        model, score = brute_force_model(houses, 'price')
+        model, score, labels = brute_force_model(houses, 'price')
         print "Brute forced a score of", score
     else:
-        model, score = simple_model(houses, 'price')
+        model, score, labels = simple_model(houses, 'price')
         print "Simple got a score of", score
 
     with open('housing_model.pkl', 'wb') as f:
         out = pickle.dump(model, f)
 
+    meta = {'labels': labels, 'score': score}
+    with open('model.meta.json', 'w') as f:
+        json.dump(meta, f)
 
 if __name__ == "__main__":
     main()

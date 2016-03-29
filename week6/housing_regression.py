@@ -68,7 +68,7 @@ def brute_force_model(data_set, target):
 
     best_model = linear_model.LinearRegression(best_train_set,
                                                best_test_set)
-    return best_model
+    return best_model, best_score
 
 
 def simple_model(data_set, target):
